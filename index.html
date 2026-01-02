@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Tap to Empire</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⚡</div>
+      <div>
+        <div class="title">Tap to Empire</div>
+        <div class="subtitle">Build. Automate. Prestige.</div>
+      </div>
+    </div>
+    <button id="btnSave" class="ghost">Save</button>
+  </header>
+
+  <main class="wrap">
+    <section class="card main">
+      <div class="stats">
+        <div class="stat">
+          <div class="label">Coins</div>
+          <div class="value" id="coins">0</div>
+        </div>
+        <div class="stat">
+          <div class="label">Per Tap</div>
+          <div class="value" id="perTap">1</div>
+        </div>
+        <div class="stat">
+          <div class="label">Per Second</div>
+          <div class="value" id="perSec">0</div>
+        </div>
+      </div>
+
+      <button id="tapButton" class="tap">
+        <div class="tapText">TAP</div>
+        <div class="tapHint">(+<span id="tapGain">1</span>)</div>
+      </button>
+
+      <div class="row">
+        <div class="pill">🔥 Combo: <span id="combo">x1.00</span></div>
+        <div class="pill">💥 Crit: <span id="crit">5%</span></div>
+      </div>
+
+      <div class="notice" id="offlineNotice" hidden></div>
+    </section>
+
+    <section class="card tabs">
+      <nav class="tabbar">
+        <button class="tab active" data-tab="upgrades">Upgrades</button>
+        <button class="tab" data-tab="automation">Automation</button>
+        <button class="tab" data-tab="prestige">Prestige</button>
+        <button class="tab" data-tab="shop">Shop</button>
+      </nav>
+
+      <div class="tabpane active" id="tab-upgrades">
+        <div class="sectionTitle">Tap Upgrades</div>
+        <div id="tapUpgrades" class="list"></div>
+      </div>
+
+      <div class="tabpane" id="tab-automation">
+        <div class="sectionTitle">Producers</div>
+        <div id="producers" class="list"></div>
+      </div>
+
+      <div class="tabpane" id="tab-prestige">
+        <div class="sectionTitle">Prestige</div>
+        <p class="muted">
+          Reset your progress to gain <b>Prestige Points</b>. Prestige permanently boosts income.
+        </p>
+
+        <div class="prestigeBox">
+          <div>
+            <div class="label">Current Prestige</div>
+            <div class="value" id="prestigePoints">0</div>
+          </div>
+          <div>
+            <div class="label">If you prestige now, you gain</div>
+            <div class="value" id="prestigeGain">0</div>
+          </div>
+          <div>
+            <div class="label">Permanent boost</div>
+            <div class="value" id="prestigeBoost">x1.00</div>
+          </div>
+        </div>
+
+        <button id="btnPrestige" class="danger">Prestige (Reset)</button>
+      </div>
+
+      <div class="tabpane" id="tab-shop">
+        <div class="sectionTitle">Boosts & Cosmetics (MVP)</div>
+        <div class="shopGrid">
+          <div class="shopItem">
+            <div class="shopName">2x Income (5 min)</div>
+            <div class="muted">Prototype boost (no ads wired)</div>
+            <button id="btnBoost" class="primary">Activate</button>
+          </div>
+          <div class="shopItem">
+            <div class="shopName">Theme: Neon</div>
+            <div class="muted">Cosmetic placeholder</div>
+            <button disabled class="ghost">Coming soon</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <button id="btnReset" class="ghost small">Hard Reset</button>
+    <div class="muted small">Saves automatically. Offline earnings included.</div>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
